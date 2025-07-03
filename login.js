@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const { chromium } = require('playwright');
 const delay = ms => new Promise(res => setTimeout(res, ms));
 
@@ -18,11 +20,11 @@ const delay = ms => new Promise(res => setTimeout(res, ms));
   await page.goto('https://app.phytopian.com/login');
 
   // Fill email
-  await page.locator('.MuiInputBase-input').first().fill('company@phytopian.com');
+  await page.locator('.MuiInputBase-input').first().fill(process.env.USER_NAME);
   await delay(3000);
 
   // Fill password
-  await page.locator('.MuiInputBase-inputAdornedEnd').fill('12345678');
+  await page.locator('.MuiInputBase-inputAdornedEnd').fill(process.env.PASS_WORD);
   await delay(3000);
 
   // Click login button
