@@ -39,18 +39,57 @@ python -m venv venv
 venv\Scripts\activate
 # On macOS/Linux:
 source venv/bin/activate
+```
 
-# 🔐 Login Automation with Playwright (JavaScript)
+2. **Install required Python packages**:
 
-Automated login testing using [Playwright](https://playwright.dev/) with JavaScript. This project demonstrates how to automate web login flows using Chromium and Playwright, including interactions with UI popups.
+```bash
+pip install -r requirements.txt
+```
 
-## ✅ Requirements
+3. **Download and install ChromeDriver**:
+
+- Go to the [ChromeDriver download page](https://sites.google.com/chromium.org/driver/downloads).
+- Download the version that matches your Chrome browser.
+- Extract the downloaded file and note the path to `chromedriver`.
+
+4. **Update `login.py` with the ChromeDriver path**:
+
+- Open `login.py` in a code editor.
+- Find the line `driver_path = "path/to/chromedriver"`.
+- Replace it with the actual path to your `chromedriver`.
+
+5. **Run the script**:
+
+```bash
+python login.py
+```
+
+---
+
+### 🔑 Environment Variables
+
+Create a `.env` file in the project root with the following content:
+
+```
+USER_NAME=your_email@example.com
+PASS_WORD=your_password
+```
+
+- Replace `your_email@example.com` and `your_password` with your actual credentials.
+- The `.env` file must be in the same directory as `login.js`.
+
+---
+
+### JavaScript + Playwright (`login.js`)
+
+#### ✅ Requirements
 
 - **Node.js** v16 or higher  
 - **npm** (comes with Node.js)  
 - **Chromium browser** (automatically installed via Playwright)
 
-## 🛠️ Setup Instructions
+#### 🛠️ Setup Instructions
 
 ```bash
 # 1. Initialize a new Node.js project (if not already)
@@ -65,6 +104,18 @@ npx playwright install
 # 4. Create your script file (if not already created)
 touch login.js
 ```
+
+### 🔑 Environment Variables
+
+Create a `.env` file in the project root with the following content:
+
+```
+USERNAME=your_email@example.com
+PASSWORD=your_password
+```
+
+- Replace `your_email@example.com` and `your_password` with your actual credentials.
+- The `.env` file must be in the same directory as `login.js`.
 
 ## ▶️ Run the Script
 
